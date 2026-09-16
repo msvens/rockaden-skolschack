@@ -1,0 +1,12 @@
+{
+  "name": "rockaden-skolschack",
+  "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "lint:php": "composer lint:php",
+    "i18n": "node scripts/i18n.mjs",
+    "i18n:check": "node scripts/i18n-check.mjs",
+    "check": "pnpm run lint:php && pnpm run i18n:check",
+    "package": "node scripts/package.mjs"
+  }
+}

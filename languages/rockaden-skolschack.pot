@@ -1,0 +1,861 @@
+# Copyright (C) 2026 msvens
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Skolschack Signups 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rockaden-skolschack\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-16T08:17:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: rockaden-skolschack\n"
+
+#. Plugin Name of the plugin
+#: rockaden-skolschack.php:3
+msgid "Skolschack Signups"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: rockaden-skolschack.php:4
+msgid "https://github.com/msvens/rockaden-skolschack"
+msgstr ""
+
+#. Description of the plugin
+#: rockaden-skolschack.php:5
+msgid "Signup management for school chess groups: a public registration form, per-school coordinators, and lists for the people who run the groups."
+msgstr ""
+
+#. Author of the plugin
+#: rockaden-skolschack.php:7
+msgid "msvens"
+msgstr ""
+
+#: blocks/signup-form/render.php:44
+msgid "Sending…"
+msgstr ""
+
+#: blocks/signup-form/render.php:45
+msgid "Thank you. The signup has been received and a confirmation is on its way to you."
+msgstr ""
+
+#: blocks/signup-form/render.php:46
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: blocks/signup-form/render.php:47
+#: blocks/signup-form/render.php:115
+msgid "Loading schools…"
+msgstr ""
+
+#: blocks/signup-form/render.php:48
+msgid "Choose a school"
+msgstr ""
+
+#: blocks/signup-form/render.php:58
+#: src/Services/SignupValidator.php:58
+msgid "The child needs a first name."
+msgstr ""
+
+#: blocks/signup-form/render.php:59
+#: src/Services/SignupValidator.php:62
+msgid "The child needs a last name."
+msgstr ""
+
+#: blocks/signup-form/render.php:60
+#: src/Services/SignupValidator.php:125
+msgid "A personnummer is twelve digits, year first and no hyphen."
+msgstr ""
+
+#: blocks/signup-form/render.php:61
+#: src/Services/SignupValidator.php:141
+msgid "That is not a real date. Check the year, month and day."
+msgstr ""
+
+#: blocks/signup-form/render.php:62
+#: src/Services/SignupValidator.php:158
+msgid "That personnummer does not look right. Please check it and try again."
+msgstr ""
+
+#: blocks/signup-form/render.php:63
+#: src/Services/SignupValidator.php:69
+msgid "A postal code is five digits."
+msgstr ""
+
+#. translators: %s: the email address as typed.
+#: blocks/signup-form/render.php:65
+#: src/Services/SignupValidator.php:209
+#, php-format
+msgid "\"%s\" is not an email address."
+msgstr ""
+
+#: blocks/signup-form/render.php:66
+#: src/Rest/SignupController.php:191
+msgid "Pick a school from the list."
+msgstr ""
+
+#: blocks/signup-form/render.php:69
+msgid "The child"
+msgstr ""
+
+#: blocks/signup-form/render.php:74
+#: src/Admin/SignupEditScreen.php:69
+#: src/Admin/SignupsExport.php:153
+msgid "First name"
+msgstr ""
+
+#: blocks/signup-form/render.php:81
+#: src/Admin/SignupEditScreen.php:70
+#: src/Admin/SignupsExport.php:154
+msgid "Last name"
+msgstr ""
+
+#: blocks/signup-form/render.php:90
+#: src/Admin/SignupEditScreen.php:73
+#: src/Admin/SignupsExport.php:155
+#: src/Admin/SignupsListTable.php:68
+msgid "Personnummer"
+msgstr ""
+
+#: blocks/signup-form/render.php:95
+msgid "Twelve digits, year first. A hyphen is fine."
+msgstr ""
+
+#: blocks/signup-form/render.php:100
+#: src/Admin/SignupEditScreen.php:212
+#: src/Admin/SignupsExport.php:157
+msgid "Gender"
+msgstr ""
+
+#: blocks/signup-form/render.php:102
+#: src/Admin/SignupEditScreen.php:207
+msgid "— not given —"
+msgstr ""
+
+#: blocks/signup-form/render.php:103
+#: src/Admin/SignupEditScreen.php:208
+msgid "Boy"
+msgstr ""
+
+#: blocks/signup-form/render.php:104
+#: src/Admin/SignupEditScreen.php:209
+msgid "Girl"
+msgstr ""
+
+#: blocks/signup-form/render.php:112
+#: src/Admin/SchoolsListTable.php:57
+#: src/Admin/SignupEditScreen.php:232
+#: src/Admin/SignupsExport.php:158
+#: src/Admin/SignupsListTable.php:69
+#: src/PostTypes/School.php:101
+msgid "School"
+msgstr ""
+
+#: blocks/signup-form/render.php:120
+msgid "Class"
+msgstr ""
+
+#: blocks/signup-form/render.php:127
+#: src/Admin/SignupEditScreen.php:88
+msgid "Address"
+msgstr ""
+
+#: blocks/signup-form/render.php:130
+#: src/Admin/SignupEditScreen.php:90
+#: src/Admin/SignupsExport.php:161
+msgid "Street"
+msgstr ""
+
+#: blocks/signup-form/render.php:136
+#: src/Admin/SignupEditScreen.php:91
+#: src/Admin/SignupsExport.php:162
+msgid "Postal code"
+msgstr ""
+
+#: blocks/signup-form/render.php:141
+#: src/Admin/SignupEditScreen.php:92
+#: src/Admin/SignupsExport.php:163
+msgid "City"
+msgstr ""
+
+#: blocks/signup-form/render.php:148
+#: src/Admin/SignupsListTable.php:72
+msgid "Guardian"
+msgstr ""
+
+#: blocks/signup-form/render.php:151
+#: blocks/signup-form/render.php:179
+#: src/Admin/SignupEditScreen.php:342
+msgid "Name"
+msgstr ""
+
+#: blocks/signup-form/render.php:158
+#: blocks/signup-form/render.php:185
+#: src/Admin/SignupEditScreen.php:343
+msgid "Email"
+msgstr ""
+
+#: blocks/signup-form/render.php:164
+#: blocks/signup-form/render.php:190
+#: src/Admin/SignupEditScreen.php:344
+msgid "Phone"
+msgstr ""
+
+#: blocks/signup-form/render.php:171
+msgid "Add a second guardian"
+msgstr ""
+
+#: blocks/signup-form/render.php:175
+msgid "Both guardians receive the confirmation and anything the club sends later."
+msgstr ""
+
+#: blocks/signup-form/render.php:199
+msgid "Website"
+msgstr ""
+
+#: blocks/signup-form/render.php:205
+msgid "Fields marked * are required."
+msgstr ""
+
+#: blocks/signup-form/render.php:209
+msgid "Sign up"
+msgstr ""
+
+#: blocks/signup-form/render.php:217
+msgid "This form needs JavaScript. Turn it on and reload the page, or contact the club directly."
+msgstr ""
+
+#: src/Admin/AdminColumns.php:39
+msgid "School chess"
+msgstr ""
+
+#: src/Admin/AdminColumns.php:68
+msgid "Full access"
+msgstr ""
+
+#: src/Admin/AdminMenu.php:41
+#: src/Admin/AdminMenu.php:42
+msgid "Skolschack"
+msgstr ""
+
+#: src/Admin/AdminMenu.php:55
+#: src/Admin/AdminMenu.php:56
+#: src/Admin/SignupsPage.php:115
+msgid "Signups"
+msgstr ""
+
+#: src/Admin/AdminMenu.php:67
+#: src/Admin/AdminMenu.php:68
+#: src/Admin/SchoolsPage.php:80
+#: src/PostTypes/School.php:100
+msgid "Schools"
+msgstr ""
+
+#: src/Admin/AdminMenu.php:76
+#: src/Admin/SettingsPage.php:281
+msgid "Skolschack settings"
+msgstr ""
+
+#: src/Admin/AdminMenu.php:77
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/SchoolActions.php:82
+#: src/Admin/SchoolActions.php:143
+#: src/Admin/SignupActions.php:74
+#: src/Admin/SignupActions.php:151
+#: src/Admin/SignupsExport.php:62
+msgid "Security check failed."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:91
+#: src/Admin/SchoolsPage.php:44
+msgid "Only an administrator can add a school."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:94
+#: src/Admin/SchoolsPage.php:59
+msgid "That school does not exist, or you do not coordinate it."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:100
+msgid "A school needs a name."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:147
+msgid "Only an administrator can delete a school."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:155
+msgid "That school does not exist."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:159
+msgid "Tick the confirmation box if you really mean to delete this school."
+msgstr ""
+
+#: src/Admin/SchoolActions.php:167
+msgid "This school still has children registered. Set it to Closed instead."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:38
+#: src/Admin/SchoolEditScreen.php:93
+#: src/Admin/SchoolsPage.php:94
+msgid "Add school"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:43
+#: src/Admin/SignupEditScreen.php:54
+msgid "Back to the list"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:63
+msgid "School name"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:72
+msgid "Room"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:72
+msgid "Free text: a room number, a name, or wherever the group actually sits."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:75
+msgid "Contact for guardians"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:77
+msgid "Printed in the confirmation email, exactly as written. One name and number, since a parent wants somebody to call rather than a list. Blank falls back to the club address in settings."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:83
+#: src/Admin/SchoolEditScreen.php:340
+#: src/Admin/SchoolsListTable.php:58
+msgid "Coordinators"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:87
+msgid "Anyone ticked here can see and edit this school's signups, and can change this page. Ticking nobody is fine; the school simply has no coordinator yet."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:93
+#: src/Admin/SignupEditScreen.php:105
+msgid "Save"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:121
+#: src/Admin/SignupEditScreen.php:130
+msgid "Saved."
+msgstr ""
+
+#. translators: %d: how many children are registered at this school.
+#: src/Admin/SchoolEditScreen.php:172
+#, php-format
+msgid "Show the %d child registered here"
+msgid_plural "Show the %d children registered here"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/SchoolEditScreen.php:210
+msgid "Weekday"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:212
+msgid "— not set —"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:234
+msgid "Time"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:252
+#: src/Admin/SchoolsListTable.php:60
+msgid "Term fee"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:257
+#: src/Admin/SettingsPage.php:194
+msgid "kronor"
+msgstr ""
+
+#. translators: %d: the club-wide default fee in kronor.
+#: src/Admin/SchoolEditScreen.php:264
+#, php-format
+msgid "Leave blank to use the club default of %d kronor. Enter a number, zero included, to override it for this school."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:280
+#: src/Admin/SchoolsListTable.php:136
+msgid "Open for signups"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:281
+#: src/Admin/SchoolsListTable.php:135
+msgid "Closed"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:284
+#: src/Admin/SchoolsListTable.php:62
+#: src/Admin/SignupEditScreen.php:313
+msgid "Status"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:297
+msgid "A closed school keeps its history but disappears from the public signup form."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:309
+msgid "Notes"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:313
+msgid "Anything the fields above cannot hold: a second session for younger children, a later start date, a room not decided yet."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:334
+msgid "No users to assign."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:368
+msgid "Delete this school"
+msgstr ""
+
+#. translators: %d: how many children are registered at this school.
+#: src/Admin/SchoolEditScreen.php:376
+#, php-format
+msgid "This school cannot be deleted: %d children are registered here and their records point at it. Set it to Closed instead, which keeps the history and removes it from the signup form."
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:391
+msgid "Yes, delete this school"
+msgstr ""
+
+#: src/Admin/SchoolEditScreen.php:393
+#: src/Admin/SignupEditScreen.php:426
+msgid "Delete"
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:59
+msgid "When"
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:61
+msgid "Children"
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:105
+msgid "No schools yet."
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:127
+msgid "default"
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:162
+#: src/Admin/SignupsListTable.php:191
+msgid "Open"
+msgstr ""
+
+#: src/Admin/SchoolsListTable.php:184
+msgid "None assigned"
+msgstr ""
+
+#: src/Admin/SchoolsPage.php:37
+msgid "You do not have permission to view schools."
+msgstr ""
+
+#: src/Admin/SchoolsPage.php:103
+msgid "You are seeing the schools you coordinate."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:102
+msgid "Current term"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:109
+#: src/Admin/SignupEditScreen.php:284
+#: src/Admin/SignupsExport.php:160
+#: src/Admin/SignupsListTable.php:71
+msgid "Term"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:117
+msgid "Default term fee"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:125
+msgid "Payment and contact"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:131
+msgid "Plusgiro"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:132
+msgid "Swish number"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:133
+msgid "Fritidskortet text"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:134
+msgid "Fallback notification address"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:179
+msgid "New signups are filed against this term, and the signup list defaults to it."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:196
+msgid "Applies to every school that does not set its own fee."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:205
+msgid "These appear in the confirmation email sent to guardians."
+msgstr ""
+
+#: src/Admin/SettingsPage.php:277
+msgid "You do not have permission to change these settings."
+msgstr ""
+
+#. translators: 1: the other child's name, 2: the term.
+#: src/Admin/SignupActions.php:99
+#, php-format
+msgid "%1$s is already registered for %2$s with these details. Two children cannot share an identity in one term."
+msgstr ""
+
+#: src/Admin/SignupActions.php:158
+msgid "Tick the confirmation box if you really mean to delete this signup."
+msgstr ""
+
+#: src/Admin/SignupActions.php:180
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: src/Admin/SignupActions.php:186
+#: src/Admin/SignupsPage.php:81
+msgid "That signup does not exist, or it belongs to a school you do not coordinate."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:67
+#: src/Admin/SignupsListTable.php:67
+msgid "Child"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:75
+msgid "Twelve digits, no hyphen. Leave blank to use a birthdate instead."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:77
+#: src/Admin/SignupsExport.php:156
+msgid "Birthdate"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:81
+#: src/Admin/SignupsExport.php:159
+#: src/Admin/SignupsListTable.php:70
+msgid "Class at signup"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:83
+msgid "As recorded when the family signed up. It is not updated as the child moves up."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:95
+msgid "Group"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:102
+msgid "Guardians"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:234
+msgid "— none —"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:309
+msgid "Active"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:310
+msgid "Withdrawn"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:326
+msgid "Withdrawn keeps the record but marks the child as no longer attending."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:345
+msgid "Main contact"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:346
+msgid "Remove"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:361
+msgid "Fill in the empty row to add another guardian. Tick Remove to drop one."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:412
+msgid "Delete this signup"
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:415
+msgid "This removes the child and their guardians permanently. Consider marking them withdrawn instead."
+msgstr ""
+
+#: src/Admin/SignupEditScreen.php:424
+msgid "Yes, delete this signup"
+msgstr ""
+
+#: src/Admin/SignupsExport.php:66
+msgid "You do not have permission to export signups."
+msgstr ""
+
+#: src/Admin/SignupsExport.php:164
+msgid "Guardian email"
+msgstr ""
+
+#: src/Admin/SignupsExport.php:165
+msgid "Guardian phone"
+msgstr ""
+
+#: src/Admin/SignupsExport.php:166
+msgid "Other guardians"
+msgstr ""
+
+#: src/Admin/SignupsExport.php:167
+#: src/Admin/SignupsListTable.php:73
+msgid "Registered"
+msgstr ""
+
+#: src/Admin/SignupsExport.php:168
+msgid "Needs checking"
+msgstr ""
+
+#: src/Admin/SignupsListTable.php:130
+msgid "No signups match."
+msgstr ""
+
+#: src/Admin/SignupsListTable.php:146
+#: src/Admin/SignupsListTable.php:238
+msgid "None"
+msgstr ""
+
+#: src/Admin/SignupsListTable.php:225
+msgid "(birthdate only)"
+msgstr ""
+
+#. translators: %d: how many further guardians there are.
+#: src/Admin/SignupsListTable.php:255
+#, php-format
+msgid "%d more guardian"
+msgid_plural "%d more guardians"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/SignupsPage.php:70
+msgid "You do not have permission to view signups."
+msgstr ""
+
+#: src/Admin/SignupsPage.php:125
+msgid "Search children"
+msgstr ""
+
+#. translators: %s: comma-separated list of school names.
+#: src/Admin/SignupsPage.php:160
+#, php-format
+msgid "You are seeing signups for %s."
+msgstr ""
+
+#. translators: %d: how many signups need checking.
+#: src/Admin/SignupsPage.php:192
+#, php-format
+msgid "%d signup needs checking."
+msgid_plural "%d signups need checking."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/SignupsPage.php:202
+msgid "Show them"
+msgstr ""
+
+#: src/Admin/SignupsPage.php:219
+msgid "All schools"
+msgstr ""
+
+#: src/Admin/SignupsPage.php:232
+msgid "All terms"
+msgstr ""
+
+#: src/Admin/SignupsPage.php:247
+msgid "Only those needing a check"
+msgstr ""
+
+#: src/Admin/SignupsPage.php:250
+msgid "Filter"
+msgstr ""
+
+#: src/Admin/SignupsPage.php:310
+msgid "Export CSV"
+msgstr ""
+
+#: src/Rest/SignupController.php:180
+msgid "That is a lot of signups from one place. Wait a little and try again, or contact the club."
+msgstr ""
+
+#. translators: 1: the child's name, 2: the school, 3: the term.
+#: src/Rest/SignupController.php:286
+#, php-format
+msgid "%1$s is already signed up for chess at %2$s this term (%3$s), so there is nothing more to do."
+msgstr ""
+
+#. translators: %s: a contact name and number.
+#: src/Rest/SignupController.php:298
+#, php-format
+msgid "If that looks wrong, contact %s."
+msgstr ""
+
+#: src/Services/DataQuality.php:86
+msgid "The personnummer check digit does not match"
+msgstr ""
+
+#: src/Services/DataQuality.php:87
+msgid "No school"
+msgstr ""
+
+#: src/Services/DataQuality.php:88
+msgid "No way to contact a guardian"
+msgstr ""
+
+#. translators: %s: the school's name.
+#: src/Services/Mail.php:57
+#, php-format
+msgid "Signup for school chess at %s"
+msgstr ""
+
+#. translators: %s: the school's name.
+#: src/Services/Mail.php:103
+#, php-format
+msgid "New school chess signup at %s"
+msgstr ""
+
+#. translators: 1: the child's name, 2: the school.
+#: src/Services/Mail.php:123
+#, php-format
+msgid "Thank you. %1$s is signed up for school chess at %2$s."
+msgstr ""
+
+#. translators: %s: a weekday and time, for example "tisdag 14:20-15:05".
+#: src/Services/Mail.php:135
+#, php-format
+msgid "We play %s."
+msgstr ""
+
+#. translators: %s: a room.
+#: src/Services/Mail.php:143
+#, php-format
+msgid "We meet in %s."
+msgstr ""
+
+#. translators: %d: the term fee in kronor.
+#: src/Services/Mail.php:157
+#, php-format
+msgid "The club charges a membership fee of %d kronor per term."
+msgstr ""
+
+#. translators: %s: a plusgiro number.
+#: src/Services/Mail.php:166
+#, php-format
+msgid "plusgiro %s"
+msgstr ""
+
+#. translators: %s: a Swish number.
+#: src/Services/Mail.php:174
+#, php-format
+msgid "Swish %s"
+msgstr ""
+
+#. translators: %s: one or more ways to pay.
+#: src/Services/Mail.php:182
+#, php-format
+msgid "Pay to %s."
+msgstr ""
+
+#: src/Services/Mail.php:183
+msgid " or "
+msgstr ""
+
+#: src/Services/Mail.php:192
+msgid "You are welcome to try twice before deciding whether to carry on."
+msgstr ""
+
+#. translators: %s: a contact name and number.
+#: src/Services/Mail.php:200
+#, php-format
+msgid "Questions about the chess at this school go to %s."
+msgstr ""
+
+#: src/Services/Mail.php:206
+msgid "Schackklubben Rockaden"
+msgstr ""
+
+#. translators: 1: the child's name, 2: the school.
+#: src/Services/Mail.php:226
+#, php-format
+msgid "%1$s has signed up for chess at %2$s."
+msgstr ""
+
+#. translators: %s: the child's class.
+#: src/Services/Mail.php:234
+#, php-format
+msgid "Class: %s"
+msgstr ""
+
+#: src/Services/SignupValidator.php:73
+msgid "Pick a term."
+msgstr ""
+
+#: src/Services/SignupValidator.php:159
+msgid "The check digit does not match. Worth confirming with the family."
+msgstr ""
+
+#: src/Services/SignupValidator.php:170
+msgid "Give either a personnummer or a birthdate."
+msgstr ""
+
+#: src/Services/SignupValidator.php:177
+msgid "That is not a real date."
+msgstr ""
+
+#: src/Services/SignupValidator.php:183
+msgid "The birthdate is in the future."
+msgstr ""
+
+#: src/Services/SignupValidator.php:226
+msgid "Nobody can be contacted about this child."
+msgstr ""
+
+#: src/Services/Terms.php:113
+msgid "Spring term"
+msgstr ""
+
+#: src/Services/Terms.php:114
+msgid "Autumn term"
+msgstr ""
+
+#: blocks/signup-form/block.json
+msgctxt "block title"
+msgid "Skolschack Signup Form"
+msgstr ""
+
+#: blocks/signup-form/block.json
+msgctxt "block description"
+msgid "The public form a guardian uses to sign a child up for school chess."
+msgstr ""

@@ -1,0 +1,11 @@
+node_modules/
+build/
+vendor/
+*.log
+.wp-env/
+.DS_Store
+dist/
+*.zip
+.idea/
+.claude/plans/
+.claude/worktrees/

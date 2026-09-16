@@ -1,0 +1,13 @@
+{
+  "core": "WordPress/WordPress#6.7",
+  "port": 8890,
+  "testsEnvironment": false,
+  "mappings": {
+    "wp-content/plugins/rockaden-skolschack": ".",
+    "wp-content/themes/rockaden-theme": "../rockaden-wp"
+  },
+  "config": {
+    "WP_DEBUG": true,
+    "SCRIPT_DEBUG": true
+  }
+}

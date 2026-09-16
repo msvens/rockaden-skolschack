@@ -1,0 +1,11 @@
+parameters:
+    level: 6
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    paths:
+        - rockaden-skolschack.php
+        - src/
+        - blocks/
+    scanDirectories:
+        - vendor/php-stubs/wordpress-stubs/
+    reportUnmatchedIgnoredErrors: false

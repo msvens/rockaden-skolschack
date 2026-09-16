@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<ruleset name="Rockaden Skolschack">
+    <description>WordPress coding standards for the Rockaden Skolschack plugin</description>
+
+    <file>rockaden-skolschack.php</file>
+    <file>src/</file>
+    <file>blocks/</file>
+    <exclude-pattern>*.js</exclude-pattern>
+
+    <!-- WordPress coding standards -->
+    <rule ref="WordPress">
+        <!-- Allow short array syntax [] instead of array() -->
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+        <!-- We use PSR-4 autoloading, not WP file naming -->
+        <exclude name="WordPress.Files.FileName"/>
+        <!-- Allow short ternary -->
+        <exclude name="Universal.Operators.DisallowShortTernary"/>
+    </rule>
+
+    <!--
+        Custom tables have no core API, so the direct-call warning has no remedy: it fires
+        even on $wpdb->insert(). Table names use the %i placeholder (WP 6.2+) and reads use
+        wp_cache_*, so the prepared-SQL and caching sniffs are satisfied for real and stay on.
+        Scoped to the data layer, which is therefore the only place raw SQL may live.
+    -->
+    <rule ref="WordPress.DB.DirectDatabaseQuery.DirectQuery">
+        <exclude-pattern>src/Data/*</exclude-pattern>
+    </rule>
+
+    <!--
+        CSV is not HTML. Running it through esc_html() would encode ampersands and quotes and
+        corrupt the file; SignupsExport::csv_line() does the quoting this format actually needs.
+    -->
+    <rule ref="WordPress.Security.EscapeOutput">
+        <exclude-pattern>src/Admin/SignupsExport.php</exclude-pattern>
+    </rule>
+
+    <!--
+        Both admin screens read their filters and navigation from the query string. A nonce there
+        would break bookmarkable URLs and the pagination links WordPress generates itself, and it
+        would protect nothing: these arguments only narrow a result set that is already limited to
+        what the viewer may see. Every form on these screens carries its own token.
+    -->
+    <rule ref="WordPress.Security.NonceVerification">
+        <exclude-pattern>src/Admin/SignupsPage.php</exclude-pattern>
+        <exclude-pattern>src/Admin/SchoolsPage.php</exclude-pattern>
+    </rule>
+
+    <!-- PHP compatibility -->
+    <config name="testVersion" value="8.1-"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <!-- Minimum WP version for deprecated function checks -->
+    <config name="minimum_wp_version" value="6.4"/>
+
+    <!-- Text domain for i18n -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="rockaden-skolschack"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

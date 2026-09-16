@@ -1,0 +1,348 @@
+/*
+ * Signup form styles.
+ *
+ * Tokens are declared on the block root and every one falls back to a literal, because a plugin
+ * cannot assume the active theme defines the palette. Under the club theme they resolve to its
+ * colours and its dark mode comes for free, since it redefines the same tokens on html.dark; the
+ * overrides below are only for the few values the palette has no name for.
+ *
+ * The form is one card rather than a stack of boxed fieldsets. Nested borders read as heavy on a
+ * form this long, so sections are separated by hairlines and labelled instead. There is no colour
+ * of its own: the card takes the page's, and nothing competes with the one button.
+ */
+
+.rsk-signup-block {
+	--rsk-surface: var( --wp--preset--color--surface, #ffffff );
+	--rsk-surface-dim: var( --wp--preset--color--surface-dim, #f3f4f6 );
+	--rsk-text: var( --wp--preset--color--on-surface, #111827 );
+	--rsk-text-muted: var( --wp--preset--color--on-surface-muted, #4b5563 );
+	--rsk-border: var( --wp--preset--color--border, #e5e7eb );
+	--rsk-primary: var( --wp--preset--color--primary, #2563eb );
+	/* The theme lightens the primary in dark mode, where white on it is unreadable. */
+	--rsk-on-primary: #ffffff;
+	--rsk-error: var( --wp--preset--color--error, #dc2626 );
+	--rsk-success: var( --wp--preset--color--success, #16a34a );
+	--rsk-error-bg: rgb( 220 38 38 / 8% );
+	--rsk-success-bg: rgb( 22 163 74 / 8% );
+	--rsk-shadow: 0 4px 12px rgb( 0 0 0 / 8% );
+
+	color: var( --rsk-text );
+	font-family: var( --wp--preset--font-family--geist, inherit );
+}
+
+/*
+ * Not every theme sets this on form controls, and without it an input at width: 100% is its
+ * padding and border wider than the column holding it. It then overhangs the column gap and the
+ * card's right padding, so two fields on a line touch each other and the right-hand one runs into
+ * the card edge. Scoped to this block rather than set globally.
+ */
+.rsk-signup-block,
+.rsk-signup-block *,
+.rsk-signup-block *::before,
+.rsk-signup-block *::after {
+	box-sizing: border-box;
+}
+
+html.dark .rsk-signup-block {
+	--rsk-on-primary: #0b1220;
+	/*
+	 * The palette's red and green are chosen against a white page and are too dark to read on
+	 * one that is nearly black, so the outcome message gets lighter shades here. Everything
+	 * else still comes from the theme.
+	 */
+	--rsk-error: #f87171;
+	--rsk-success: #4ade80;
+	--rsk-error-bg: rgb( 220 38 38 / 18% );
+	--rsk-success-bg: rgb( 22 163 74 / 18% );
+	--rsk-shadow: 0 4px 12px rgb( 0 0 0 / 30% );
+}
+
+.rsk-signup__inner {
+	max-width: 42rem;
+}
+
+.rsk-signup-block.alignwide .rsk-signup__inner,
+.rsk-signup-block.alignfull .rsk-signup__inner {
+	margin-inline: auto;
+}
+
+/* --- The card --- */
+
+.rsk-signup {
+	background: var( --rsk-surface );
+	border: 1px solid var( --rsk-border );
+	border-radius: 0.75rem;
+	box-shadow: var( --rsk-shadow );
+	overflow: hidden;
+	padding: 0;
+}
+
+/* --- Sections --- */
+
+.rsk-signup__group {
+	border: 0;
+	border-bottom: 1px solid var( --rsk-border );
+	margin: 0;
+	/*
+	 * A fieldset defaults to min-inline-size: min-content, which stops the grids inside it from
+	 * ever shrinking and makes the card overflow on a phone.
+	 */
+	min-inline-size: 0;
+	/* The top padding lands below the legend, so it is the gap under the section label. */
+	padding: 1rem 1.5rem 1.5rem;
+}
+
+.rsk-signup__group legend {
+	color: var( --rsk-text-muted );
+	display: block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	/*
+	 * A rendered legend sits in the fieldset's border area, which neither of the fieldset's own
+	 * spacings reaches: its top padding falls below the legend, and a margin here just moves the
+	 * whole fieldset down. Padding on the legend itself is what puts air between the section
+	 * label and the rule above it.
+	 */
+	margin: 0;
+	padding: 1.75rem 0 0;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+/* --- Fields --- */
+
+/*
+ * Pairs sit side by side when there is room and stack when there is not, with no breakpoint to
+ * pick: the columns themselves decide.
+ */
+.rsk-signup__row {
+	display: grid;
+	gap: 0 1.5rem;
+	grid-template-columns: repeat( auto-fit, minmax( 13rem, 1fr ) );
+}
+
+.rsk-signup__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin: 0 0 1rem;
+}
+
+.rsk-signup__group > .rsk-signup__field:last-child,
+.rsk-signup__group > .rsk-signup__row:last-child .rsk-signup__field,
+.rsk-signup__more-fields > .rsk-signup__row:last-child .rsk-signup__field {
+	margin-bottom: 0;
+}
+
+.rsk-signup__field label {
+	font-size: 0.8125rem;
+	font-weight: 500;
+}
+
+.rsk-signup__req {
+	color: var( --rsk-text-muted );
+	margin-left: 0.15em;
+}
+
+.rsk-signup input,
+.rsk-signup select {
+	background-color: var( --rsk-surface );
+	border: 1px solid var( --rsk-border );
+	border-radius: 0.375rem;
+	color: var( --rsk-text );
+	font-family: inherit;
+	font-size: 1rem; /* Anything smaller makes iOS Safari zoom on focus. */
+	padding: 0.55rem 0.7rem;
+	transition: border-color 0.15s, box-shadow 0.15s;
+	width: 100%;
+}
+
+.rsk-signup input:focus,
+.rsk-signup select:focus {
+	border-color: var( --rsk-primary );
+	box-shadow: 0 0 0 3px rgb( 37 99 235 / 20% );
+	outline: none;
+}
+
+.rsk-signup input.is-invalid,
+.rsk-signup select.is-invalid {
+	border-color: var( --rsk-error );
+}
+
+.rsk-signup input.is-invalid:focus,
+.rsk-signup select.is-invalid:focus {
+	box-shadow: 0 0 0 3px rgb( 220 38 38 / 20% );
+}
+
+.rsk-signup__hint {
+	color: var( --rsk-text-muted );
+	font-size: 0.8125rem;
+}
+
+/*
+ * What is wrong with one field, written under it as the reader leaves it. Added by the script and
+ * emptied again rather than removed, so the element the field points at with aria-errormessage
+ * stays put; it is taken out of the layout while it has nothing to say.
+ */
+.rsk-signup__error {
+	color: var( --rsk-error );
+	font-size: 0.8125rem;
+}
+
+.rsk-signup__error:empty {
+	display: none;
+}
+
+/* --- The optional second guardian --- */
+
+/*
+ * A native disclosure rather than a script. The form is long enough already, and a guardian who
+ * does not need a second one never sees those three fields.
+ */
+.rsk-signup__more {
+	border: 0;
+	border-bottom: 1px solid var( --rsk-border );
+	padding: 1.5rem;
+}
+
+.rsk-signup__more summary {
+	color: var( --rsk-primary );
+	cursor: pointer;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	list-style: none;
+}
+
+.rsk-signup__more summary::-webkit-details-marker {
+	display: none;
+}
+
+.rsk-signup__more summary::before {
+	content: "+";
+	display: inline-block;
+	font-weight: 600;
+	margin-right: 0.45rem;
+	width: 0.7em;
+}
+
+.rsk-signup__more[open] summary::before {
+	content: "\2212"; /* minus */
+}
+
+.rsk-signup__more summary:focus-visible {
+	border-radius: 0.25rem;
+	outline: 2px solid var( --rsk-primary );
+	outline-offset: 3px;
+}
+
+.rsk-signup__more-fields {
+	padding-top: 1.25rem;
+}
+
+/* --- Footer --- */
+
+.rsk-signup__footer {
+	align-items: center;
+	background: var( --rsk-surface-dim );
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	padding: 1.25rem 1.5rem;
+}
+
+.rsk-signup__note {
+	color: var( --rsk-text-muted );
+	font-size: 0.8125rem;
+	margin: 0;
+}
+
+.rsk-signup__actions {
+	margin: 0;
+	margin-left: auto;
+}
+
+.rsk-signup__submit {
+	background-color: var( --rsk-primary );
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+	color: var( --rsk-on-primary );
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	padding: 0.6rem 1.75rem;
+	transition: filter 0.15s, opacity 0.15s;
+}
+
+.rsk-signup__submit:hover:not( :disabled ) {
+	filter: brightness( 1.1 );
+}
+
+.rsk-signup__submit:focus-visible {
+	outline: 2px solid var( --rsk-primary );
+	outline-offset: 3px;
+}
+
+.rsk-signup__submit:disabled {
+	cursor: default;
+	opacity: 0.55;
+}
+
+@media ( max-width: 30rem ) {
+	.rsk-signup__group,
+	.rsk-signup__more,
+	.rsk-signup__footer {
+		padding-inline: 1.1rem;
+	}
+
+	.rsk-signup__actions {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.rsk-signup__submit {
+		width: 100%;
+	}
+}
+
+/* --- Outcome --- */
+
+/*
+ * Always in the DOM so the live region exists before there is anything to announce, but only
+ * drawn once it says something.
+ */
+.rsk-signup__status {
+	border-radius: 0.375rem;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.rsk-signup__status:not( :empty ) {
+	margin: 0 1.5rem 1.5rem;
+	padding: 0.75rem 1rem;
+}
+
+.rsk-signup__status.is-sending {
+	color: var( --rsk-text-muted );
+}
+
+.rsk-signup__status.is-success {
+	background: var( --rsk-success-bg );
+	color: var( --rsk-success );
+}
+
+.rsk-signup__status.is-error {
+	background: var( --rsk-error-bg );
+	color: var( --rsk-error );
+}
+
+/* Hidden from people and from assistive technology, but not display:none, which bots skip. */
+.rsk-signup__hp {
+	height: 1px;
+	left: -9999px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
