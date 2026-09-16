@@ -85,8 +85,9 @@ class Identity {
 	/**
 	 * The Luhn check Swedish personnummer carry.
 	 *
-	 * Reported rather than enforced on import: a historic row with a bad checksum is still the
-	 * record of a real child who attended. The public form will enforce it.
+	 * Reported rather than enforced when a record is written by hand: a handful of records on file
+	 * do not match, and each is still the record of a real child. The public form enforces it,
+	 * because a parent typing the number can simply correct it.
 	 *
 	 * @param string $personnummer Twelve digits.
 	 * @return bool Whether the checksum matches.

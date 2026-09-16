@@ -122,8 +122,3 @@ register_activation_hook(
 );
 
 register_deactivation_hook( RSK_PLUGIN_FILE, 'flush_rewrite_rules' );
-
-/*
- * Still to come, phase by phase: the WP-CLI importer, the signup list and export,
- * and the public form block with its REST route. See CLAUDE.md for the conventions.
- */
